@@ -39,8 +39,6 @@ class BinarySearch:
     self.total_time = total_time
     self.current_record = current_record
     self.distances = {}
-    self.lowest_time_for_record = None
-    self.highest_time_for_record = None
 
   def run(self):
     self.search_lo()
