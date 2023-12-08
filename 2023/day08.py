@@ -56,7 +56,7 @@ test_directions2, test_nodes2 = parse_input(TEST_INPUT_FILE2)
 assert follow_instructions(test_directions2, test_nodes2) == 6
 
 test_directions3, test_nodes3 = parse_input(TEST_INPUT_FILE3)
-assert ghost_instructions(test_directions3, test_nodes3) == 6
+assert ghost_instructions(test_directions3, test_nodes3, maximum=100) == 6
 
 real_directions, real_nodes = parse_input(INPUT_FILE)
 print(f'Day {DAY} part 1: {follow_instructions(real_directions, real_nodes)}')
