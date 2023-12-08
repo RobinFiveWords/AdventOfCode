@@ -1,7 +1,6 @@
-import collections
 import itertools
+import math
 import re
-import sympy
 
 DAY = int(__file__.split('/')[-1][3:5])
 YEAR = int(__file__.split('/')[-2])
@@ -49,14 +48,7 @@ def ghost_instructions(directions, nodes, start_char='A', end_char='Z', maximum=
   ghosts = [ghost(directions, nodes, start, end_char, maximum)
             for start in nodes if start[-1] == start_char]
   assert all(zs[0] * 2 == zs[1] for zs in ghosts)  # these are repeating cycles
-  prime_factors = [sympy.factorint(zs[0]) for zs in ghosts]
-  max_pf = collections.Counter()
-  for pf in prime_factors:
-    max_pf |= pf
-  result = 1
-  for factor, exponent in max_pf.items():
-    result *= factor ** exponent
-  return result
+  return math.lcm(*(zs[0] for zs in ghosts))
 
 test_directions, test_nodes = parse_input(TEST_INPUT_FILE)
 assert follow_instructions(test_directions, test_nodes) == 2
