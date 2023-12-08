@@ -3,7 +3,9 @@
 # for Advent of Code 2023
 
 import collections
+import math
 import re
+import sympy
 
 
 regex_digits = re.compile(r'\d+')
@@ -42,6 +44,14 @@ def flatten(L):
         yield from flatten(item)
       except TypeError:
         yield item
+
+
+def lcm(integers):
+  prime_factors = collections.Counter()
+  for n in integers:
+    prime_factors |= sympy.factorint(n)
+  return math.prod(factor ** exponent
+                   for factor, exponent in prime_factors.items())
 
 
 def manhattan_distance(p1, p2):
