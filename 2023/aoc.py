@@ -32,6 +32,20 @@ Left   = Point(-1,  0)
 Right  = Point( 1,  0)
 
 
+def display_points(points):
+  xmin = min(p.x for p in points)
+  xmax = max(p.x for p in points)
+  ymin = min(p.y for p in points)
+  ymax = max(p.y for p in points)
+  for y in range(ymin, ymax + 1):
+    for x in range(xmin, xmax + 1):
+      if Point(x, y) in points:
+        print('#', end='')
+      else:
+        print('.', end='')
+    print()
+
+
 def flatten(L):
   """Recursively flatten iterables while treating strings as atoms."""
   for item in L:
