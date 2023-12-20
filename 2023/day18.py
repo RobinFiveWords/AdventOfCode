@@ -183,11 +183,7 @@ def get_vertical_ranges(vs):
 
 def scan_line(coords):
   coords = sorted(coords)  # make sure list is sorted
-  try:
-    return sum(coords[i+1] - coords[i] + 1 for i in range(0, len(coords), 2))
-  except IndexError as e:
-    print(coords)
-    raise e
+  return sum(coords[i+1] - coords[i] + 1 for i in range(0, len(coords), 2))
 
 def scan_range(start, end, coords):
   return (end - start + 1) * scan_line(coords)
