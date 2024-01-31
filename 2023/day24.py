@@ -115,7 +115,7 @@ def new_position(h, t):
 # and this also equals,
 # for each of y and z,
 
-# (new_position(h2, t2) - new_posiiton(h1, t1))
+# (new_position(h2, t2) - new_position(h1, t1))
 # divided by 
 # (new_position(h3, t3) - new_position(h1, t1))
 
