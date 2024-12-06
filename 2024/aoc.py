@@ -72,3 +72,10 @@ def parse_ints(s, negative=False):
 
 def sign(x): return (x > 0) - (x < 0)
 assert [sign(x) for x in [-2, -1, 0, 1, 2]] == [-1, -1, 0, 1, 1]
+
+def single(vals):
+  if isinstance(vals, map):
+    vals = list(vals)
+  unique = set(vals)
+  assert len(unique) == 1, f'expecting exactly one value but received {vals}'
+  return unique.pop()
