@@ -101,8 +101,8 @@ class Computer:
 
   def search(self):
     # in the real input,
-    # it seems like whatever value X of A matches the last N digits of the output,
-    # the smallest value of A that matches the last N+1 digits of the output
+    # it seems like whatever value X of A matches the last N digits of the program,
+    # the smallest value of A that matches the last N+1 digits of the program
     # is equal to or slightly greater than 8 * X.
     program = ','.join(map(str, self.program))
     a = 0
@@ -129,5 +129,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-
-# part 1: not 2,2,6,7,1,4,2,6,3
