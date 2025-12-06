@@ -31,13 +31,10 @@ def point_zeros(file, start=50, size=100):
   current_position = None
   diff_spins = None
   for value in parse_file(file):
-    print(f"{previous_position=} {value=} {result=}")
     diff_spins, current_position = divmod(previous_position + value, size)
     result += abs(diff_spins) - int(previous_position == 0 and value <= 0)
     if diff_spins <= 0 and current_position == 0:
       result += 1
-    print(f"{diff_spins=} {current_position=} {result=}")
-    print()
     previous_position = current_position
   return result
 

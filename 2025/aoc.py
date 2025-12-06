@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # aoc.py
-# for Advent of Code 2020
+# for Advent of Code 2025
 
 import collections
 import re

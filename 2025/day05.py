@@ -20,7 +20,7 @@ def fresh(ingredient, ranges):
 def count_fresh(ingredients, ranges):
   return sum(fresh(ingredient, ranges) for ingredient in ingredients)
 
-assert count_fresh(*parse_file('testinput05.txt'))
+assert count_fresh(*parse_file('testinput05.txt')) == 3
 
 
 def considered_fresh(ranges):
