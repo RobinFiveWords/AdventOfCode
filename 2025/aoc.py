@@ -46,6 +46,25 @@ def display_points(points):
     print()
 
 
+P3 = collections.namedtuple('Point3', ['x', 'y', 'z'])
+
+class Point3(P3):
+  def __add__(self, other):
+    return Point(self.x + other.x, self.y + other.y, self.z + other.z)
+
+  def __sub__(self, other):
+    return Point(self.x - other.x, self.y - other.y, self.z - other.z)
+
+  def __mul__(self, value):
+    return Point(self.x * value, self.y * value, self.z * value)
+
+  def manhattan_distance(self, other):
+    return abs(self.x - other.x) + abs(self.y - other.y) + abs(self.z - other.z)
+
+  def euclidean_distance_squared(self, other):
+    return (self.x - other.x) ** 2 + (self.y - other.y) ** 2 + (self.z - other.z) ** 2
+
+
 def flatten(L):
     """Recursively flatten iterables while treating strings as atoms."""
     for item in L:
