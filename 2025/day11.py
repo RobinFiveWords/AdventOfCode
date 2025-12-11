@@ -54,5 +54,5 @@ assert count_paths2(parse_file('testinput11b.txt')) == 2
 print('Day 11 part 1:', count_paths(parse_file('input11.txt')))
 print('Day 11 part 2:', count_paths2(parse_file('input11.txt')))
 
-# #1117 for part 1
-# #496 for part 2
+# latest refresh showed 1117 had completed part 1 when I did
+# latest refresh showed  496 had completed part 2 when I did
